@@ -6,22 +6,29 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     let circleView = UIView()
+    let lottieAnimationView = LottieAnimationView()
+    
     let tapGesture = UITapGestureRecognizer()
     let longPressGesture = UILongPressGestureRecognizer()
     let panGesture = UIPanGestureRecognizer()
-
+    let swipeGesture = UISwipeGestureRecognizer()
+    
     var symbolsArray = ["👆", "👇", "👈", "👉"]
     var buttonsArray: [UIButton] = []
     var buttonsHStackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupViewForAnimation()
+        setupSwipeGesture()
         setupButtonsStack()
         setupCircle()
+        
     }
 
     func setupButtonsStack() {
@@ -77,6 +84,18 @@ class ViewController: UIViewController {
         circleView.addGestureRecognizer(longPressGesture)
         circleView.addGestureRecognizer(panGesture)
     }
+    
+    func setupViewForAnimation() {
+        let frameSquareSide: CGFloat = 400
+        lottieAnimationView.frame = CGRect(x: UIScreen.main.bounds.width/2 - frameSquareSide/2, y: UIScreen.main.bounds.height - frameSquareSide, width: frameSquareSide, height: frameSquareSide)
+        view.addSubview(lottieAnimationView)
+    }
+    
+    func setupSwipeGesture() {
+        swipeGesture.addTarget(self, action: #selector(viewSwiped))
+        swipeGesture.direction = .up
+        view.addGestureRecognizer(swipeGesture)
+    }
 
     func setupHStackConstraints() {
         NSLayoutConstraint.activate([
@@ -92,6 +111,21 @@ class ViewController: UIViewController {
                 button.heightAnchor.constraint(equalToConstant: 70),
             ])
         })
+    }
+    
+    @objc func viewSwiped() {
+        print("View swiped")
+
+        lottieAnimationView.contentMode = .scaleAspectFit
+        
+        if let animation = LottieAnimation.named("CatAnimation") {
+            lottieAnimationView.animation = animation
+            lottieAnimationView.animationSpeed = 1.5
+            lottieAnimationView.loopMode = .autoReverse
+            lottieAnimationView.play(fromProgress: 0, toProgress: 1, loopMode: .playOnce) {completed in
+                self.lottieAnimationView.play(fromProgress: 1, toProgress: 0, loopMode: .playOnce)
+            }
+        }
     }
 
     @objc func buttonTapped(_ sender: UIButton) {

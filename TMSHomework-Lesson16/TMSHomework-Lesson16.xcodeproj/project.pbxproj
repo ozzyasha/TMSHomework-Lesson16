@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A350D2D2B5DC42B00DE0790 /* CatAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A350D2C2B5DC42B00DE0790 /* CatAnimation.json */; };
+		7A350D302B5DC50100DE0790 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7A350D2F2B5DC50100DE0790 /* Lottie */; };
 		7A5D140E2B557F7B007605DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D140D2B557F7B007605DD /* AppDelegate.swift */; };
 		7A5D14102B557F7B007605DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D140F2B557F7B007605DD /* SceneDelegate.swift */; };
 		7A5D14122B557F7B007605DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D14112B557F7B007605DD /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A350D2C2B5DC42B00DE0790 /* CatAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatAnimation.json; sourceTree = "<group>"; };
 		7A5D140A2B557F7B007605DD /* TMSHomework-Lesson16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMSHomework-Lesson16.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5D140D2B557F7B007605DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A5D140F2B557F7B007605DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A350D302B5DC50100DE0790 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7A5D140D2B557F7B007605DD /* AppDelegate.swift */,
+				7A350D2C2B5DC42B00DE0790 /* CatAnimation.json */,
 				7A5D140F2B557F7B007605DD /* SceneDelegate.swift */,
 				7A5D14112B557F7B007605DD /* ViewController.swift */,
 				7A5D14132B557F7B007605DD /* Main.storyboard */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = "TMSHomework-Lesson16";
+			packageProductDependencies = (
+				7A350D2F2B5DC50100DE0790 /* Lottie */,
+			);
 			productName = "TMSHomework-Lesson16";
 			productReference = 7A5D140A2B557F7B007605DD /* TMSHomework-Lesson16.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 7A5D14012B557F7B007605DD;
+			packageReferences = (
+				7A350D2E2B5DC50100DE0790 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 7A5D140B2B557F7B007605DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5D141A2B557F7D007605DD /* LaunchScreen.storyboard in Resources */,
+				7A350D2D2B5DC42B00DE0790 /* CatAnimation.json in Resources */,
 				7A5D14172B557F7D007605DD /* Assets.xcassets in Resources */,
 				7A5D14152B557F7B007605DD /* Main.storyboard in Resources */,
 			);
@@ -363,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A350D2E2B5DC50100DE0790 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A350D2F2B5DC50100DE0790 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A350D2E2B5DC50100DE0790 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A5D14022B557F7B007605DD /* Project object */;
 }
